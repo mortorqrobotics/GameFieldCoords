@@ -19,6 +19,7 @@ document.addEventListener('mousemove', (e) => {
 })
 
 document.addEventListener('click', (e) => {
+    if(e.target.tagName !== "IMG") return;
     let { width, height } = document.querySelector('img').getBoundingClientRect();
-    document.querySelector('#savePos').textContent = `x: ${((x / width) * fieldWidth).toFixed(2)}cm y: ${((y / height) * fieldHeight).toFixed(2)}cm`
+    document.querySelector('#savePos').innerHTML += `<br>x: ${((x / width) * fieldWidth).toFixed(2)}cm y: ${((y / height) * fieldHeight).toFixed(2)}cm`
 })
