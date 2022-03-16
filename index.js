@@ -1,5 +1,5 @@
-let fieldWidth = 1646;
-let fieldHeight = 823;
+let fieldWidth = 1646 * 0.0254;
+let fieldHeight = 823 * 0.0254;
 
 let x;
 let y;
@@ -49,6 +49,6 @@ document.addEventListener('mousedown', (e) => {
     if(!positions[0]) return positions[0] = [convertToCm(x), convertToCm(y, false)];
     if(!positions[1]) positions[1] = [convertToCm(x), convertToCm(y, false)];
 
-    console.log("distance", `${roundTo(Math.hypot(positions[1][0] - positions[0][0], positions[1][1] - positions[0][1]) / 100, 2)} meters`)
+    console.log("distance", `${roundTo(Math.hypot(positions[1][0] - positions[0][0], positions[1][1] - positions[0][1]) / 100, 2)} inches`)
     positions = [];
 })
