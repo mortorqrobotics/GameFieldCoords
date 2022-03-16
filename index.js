@@ -15,7 +15,7 @@ document.addEventListener('mousemove', (e) => {
     y = mouseY - yOffset;
 
     document.querySelector('.coords').textContent = `x: ${x}px, y: ${y}px`;
-    document.querySelector('.pos').textContent = `x: ${((x / width) * fieldWidth).toFixed(2)}cm y: ${((y / height) * fieldHeight).toFixed(2)}cm`;
+    document.querySelector('.pos').textContent = `x: ${((x / width) * fieldWidth).toFixed(2)}in y: ${((y / height) * fieldHeight).toFixed(2)}in`;
 })
 
 /*document.addEventListener('click', (e) => {
