@@ -1,5 +1,5 @@
-let fieldWidth = 1646 * 0.0254;
-let fieldHeight = 823 * 0.0254;
+let fieldWidth = 1646 / 2.54;
+let fieldHeight = 823 / 2.54;
 
 let x;
 let y;
