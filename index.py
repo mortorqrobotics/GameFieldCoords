@@ -47,6 +47,16 @@ circles = [] # list to hold circle positions and text
 font = pygame.font.Font('freesansbold.ttf', 16) # style, size
 font2 = pygame.font.Font('freesansbold.ttf', 12) # style, size
 
+# line and arrow code
+def draw_arrow(screen, colour, start, end):
+    line = pygame.draw.line(screen,colour,start,end,2)
+    rotation = math.degrees(math.atan2(start[1]-end[1], end[0]-start[0]))+90
+    point1 = (end[0]+10*math.sin(math.radians(rotation)), end[1]+10*math.cos(math.radians(rotation)))
+    point2 = (end[0]+10*math.sin(math.radians(rotation-120)), end[1]+10*math.cos(math.radians(rotation-120)))
+    point3 = (end[0]+10*math.sin(math.radians(rotation+120)), end[1]+10*math.cos(math.radians(rotation+120)))
+    pygame.draw.polygon(screen, (0, 0, 0), (point1, point2, point3))
+    return line
+
 # infinite loop
 while True :
   
@@ -96,7 +106,8 @@ while True :
             
             # draws line between every 2 points
             if (i+1)%2 == 0 and circles[i-1] != None:
-                line = pygame.draw.line(display_surface, black, circles[i-1], circles[i])
+
+                line = draw_arrow(display_surface, black, circles[i-1], circles[i]) # calls the function to draw a line and arrow
 
                 dist = str(round(math.dist(circles[i], circles[i-1]) * conversions[conversion_mode], 2)) # finds distance between new dot and old dot in the current unit mode as a string
 
