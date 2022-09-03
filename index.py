@@ -13,15 +13,17 @@ white = (255,255,255)
 # dimentions of screen in px (image dimentions are 890 x 442)
 screen_width = 1000
 screen_height = 550
+image_width = 890
+image_height = 442
 
 # dimentions of the field in cm
 field_width = 1646
 field_height = 823
 
 #conversions
-pxToIn = (field_width/2.54)/screen_width # (field of 1646 x 823 cm)
+pxToIn = (field_width/2.54)/image_width # (field of 1646 x 823 cm)
 pxToFt = pxToIn/12
-pxToCm = field_width/screen_width
+pxToCm = field_width/image_width
 pxToM = pxToCm/100
 conversions = [pxToIn, pxToFt, pxToCm, pxToM]
 units = ["in", "ft", "cm", "m"]
