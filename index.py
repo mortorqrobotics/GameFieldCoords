@@ -36,7 +36,7 @@ display_surface = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('GameFieldCoords')
    
 # create a surface object, image is drawn on it.
-image = pygame.image.load('Better.png')
+image = pygame.image.load('Screenshot 2023-01-08 211733.png')
 
 #dot settings
 circle_radius = 5
