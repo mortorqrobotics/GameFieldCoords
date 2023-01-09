@@ -10,15 +10,15 @@ bg_color = (200, 200, 200) # grey
 black = (0,0,0)
 white = (255,255,255)
   
-# dimentions of screen in px (image dimentions are 890 x 442)
-screen_width = 1000
-screen_height = 550
-image_width = 890
-image_height = 442
+# dimentions of screen in px (image dimentions are 1267 x 515)
+image_width = 934
+image_height = 459
+screen_width = image_width + 120
+screen_height = image_height + 120
 
 # dimentions of the field in cm
-field_width = 1646
-field_height = 823
+field_width = 1654
+field_height = 801
 
 #conversions
 pxToIn = (field_width/2.54)/image_width # (field of 1646 x 823 cm)
@@ -36,7 +36,7 @@ display_surface = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('GameFieldCoords')
    
 # create a surface object, image is drawn on it.
-image = pygame.image.load('Gamefield.png')
+image = pygame.image.load('Better.png')
 
 #dot settings
 circle_radius = 5
@@ -66,7 +66,7 @@ while True :
     # display image
     display_surface.blit(image, (0, 0))
 
-    if pygame.mouse.get_pos()[0] < 890 and pygame.mouse.get_pos()[1] < 442:
+    if pygame.mouse.get_pos()[0] < image_width and pygame.mouse.get_pos()[1] < image_height:
         xUnit = round(pygame.mouse.get_pos()[0] * conversions[conversion_mode], 2) # mouse x pos in the current unit mode
         yUnit = round(pygame.mouse.get_pos()[1] * conversions[conversion_mode], 2) # mouse y pos in the current unit mode
         xPx = round(pygame.mouse.get_pos()[0], 2) # mouse x pos in px
@@ -130,7 +130,7 @@ while True :
                         circles[i] = None;  # sets position to none (this way the order is kept)
                         empty = False
             
-            if empty and pos[0]<890 and pos[1]< 442 and event.button == 1: # no collistions, right click, and in bounds
+            if empty and pos[0]<image_width and pos[1]< image_height and event.button == 1: # no collistions, right click, and in bounds
 
                 # loops for list to check for missingpoint to replace
                 for i in range(len(circles)):
